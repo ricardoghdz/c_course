@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<cs50.h>
+const int ARRAY_LENGTH = 10;
 
-int arr[10]  = {0,2,4,6,8,9,7,5,3,1};
-int arr_length = 10;
+int arr[ARRAY_LENGTH]  = {0,2,4,6,8,9,7,5,3,1};
 
 int guess_number();
 bool is_number(int guess);
@@ -25,7 +25,7 @@ int guess_number() {
 bool is_number(int digit) {
 
 
-    for(int i = 0; i < arr_length; i++) {
+    for(int i = 0; i < ARRAY_LENGTH; i++) {
         if(arr[i] == digit) {
             return true;
         }

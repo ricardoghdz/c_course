@@ -26,7 +26,7 @@ int binary_search(int *array, int value, int low, int high){
     if(array[mid] > value)
         return binary_search(array, value, low, mid -1);
     else if(array[mid] < value)
-        return binary_search(array, value, mid + 1, high);
+        return binary_search(array, value, mid + 1, high); //Vuelve a entrar a la afunción (a llamarla)
     else
         return mid;
 }

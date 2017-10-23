@@ -2,7 +2,7 @@
 #include<cs50.h>
 #include<string.h>
 
-int SIZE_OF_INT_STR = 13;
+int SIZE_OF_INT_STR = 12;
 
 int main(void) {
     int short_num = 3;
@@ -10,7 +10,7 @@ int main(void) {
 
     int length = 2;
 
-    string str_arr = (string) malloc((3 + length * SIZE_OF_INT_STR) * sizeof(char));
+    string str_arr = (string) malloc((2 + length * SIZE_OF_INT_STR) * sizeof(char));
 
     strcat(str_arr, "{");
     char buffer[SIZE_OF_INT_STR];
