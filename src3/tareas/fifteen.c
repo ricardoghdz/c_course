@@ -29,6 +29,8 @@ int board[DIM_MAX][DIM_MAX];
 // dimensions
 int d;
 
+int MAX_NUM;
+
 // prototypes
 void clear(void);
 void greet(void);
@@ -36,6 +38,14 @@ void init(void);
 void draw(void);
 bool move(int tile);
 bool won(void);
+
+void swap(int row1, int col1, int row2, int col2);
+bool is_left(int row_tile, int col_tile, int row_zero, int col_zero);
+bool is_rigth(int row_tile, int col_tile, int row_zero, int col_zero);
+int get_col(int tile);
+int get_row(int tile);
+bool is_above(int row_tile, int col_tile, int row_zero, int col_zero);
+bool is_below(int row_tile, int col_tile, int row_zero, int col_zero);
 
 int main(int argc, string argv[])
 {
@@ -157,14 +167,40 @@ void greet(void)
 void init(void)
 {
     //TODO
+    MAX_NUM = d*d-1; //El valor que se inicia del numero mas grande del juego
+    for (int i = 0; i < d; i++){
+        for(int j = 0; j < d; j++){
+            board[i][j] = MAX_NUM;
+            MAX_NUM--;
+        }
+    }
+    if(d % 2 == 0){//En caso de que sea par el limite
+        int row = d-1; //Fila en la que se hacen los camios, la ultima
+        int col1 = d - 3; //El primer valor a camiar de posicion
+        int col2 = d - 2; //El segundo valor a camiar de posicion con el primero
+        swap(row, col1, row, col2);
+    }
 }
 
-/**
- * Prints the board in its current state.
- */
+void swap(int row1, int col1, int row2, int col2){
+    int temp = board[row1][col1];
+    board[row1][col1] = board[row2][col2];
+    board[row2][col2] = temp;
+}
+
 void draw(void)
 {
-    //TODO
+     for(int i = 0; i < d; i++){
+        for(int j = 0; j < d; j++){
+            if(board[i][j] == 0){
+                printf(" _ ");
+            }
+            else{
+                printf("%2i ", board[i][j]); //El dos es para los espacios como en el float(%.2f), se imprime con dos posiciones
+            }
+        }
+        printf("\n");
+    }
 }
 
 /**
@@ -173,7 +209,65 @@ void draw(void)
  */
 bool move(int tile)
 {
+    //Sacar las cordenadas de 0 y el numero a mover
+    int row_zero = get_row(0);
+    int col_zero = get_col(0);
+    int row_tile = get_row(tile);
+    int col_tile = get_col(tile);
+    //Determinar si el movimiento es valido
+    if(is_left(row_tile, col_tile, row_zero, col_zero) || is_rigth(row_tile, col_tile, row_zero, col_zero) || is_above(row_tile, col_tile, row_zero, col_zero) || is_below(row_tile, col_tile, row_zero, col_zero)){
+        swap(row_tile, col_tile, row_zero, col_zero);
+        return true;
+    }
     return false;
+}
+
+int get_row(int tile){
+    for (int i = 0; i < d; i++){
+        for(int j = 0; j < d; j++){
+            if(board[i][j] == tile)
+                return i;
+        }
+    }
+    return -1;
+}
+
+int get_col(int tile){
+    for (int i = 0; i < d; i++){
+        for(int j = 0; j < d; j++){
+            if(board[i][j] == tile)
+                return j;
+        }
+    }
+    return -1;
+}
+
+bool is_left(int row_tile, int col_tile, int row_zero, int col_zero){
+    bool condition1 = row_tile == row_zero;
+    bool condition2 = col_tile + 1 == col_zero;
+    bool condition3 = col_zero > 0;
+    return condition1 && condition2 && condition3;
+}
+
+bool is_rigth(int row_tile, int col_tile, int row_zero, int col_zero){
+    bool condition1 = row_tile == row_zero;
+    bool condition2 = col_tile - 1 == col_zero;
+    bool condition3 = col_zero < d - 1;
+    return condition1 && condition2 && condition3;
+}
+
+bool is_above(int row_tile, int col_tile, int row_zero, int col_zero){
+    bool condition1 = col_tile == col_zero;
+    bool condition2 = row_tile == row_zero - 1;
+    bool condition3 = row_zero > 0;
+    return condition1 && condition2 && condition3;
+}
+
+bool is_below(int row_tile, int col_tile, int row_zero, int col_zero){
+    bool condition1 = col_tile == col_zero;
+    bool condition2 = row_tile == row_zero + 1;
+    bool condition3 = row_zero < d - 1;
+    return condition1 && condition2 && condition3;
 }
 
 /**
@@ -182,5 +276,22 @@ bool move(int tile)
  */
 bool won(void)
 {
-    return false;
+    int cont = 1;
+    for(int i = 0; i < d; i++){
+        for(int j = 0; j < d; j++){
+            if(i == d-1 && j == d-1 && board[i][j] == 0){
+                break;
+            }else if(board[i][j] != cont){
+                return false;
+            }
+            cont++;
+        }
+    }
+    return true;
+        /*for(int i = 0, n = d * d - 1; i < n; i++){
+        if(board[i/d][i%d] != i + 1){
+            return false;
+        }
+    }
+    return board[d-1][d-1] == 0;*/
 }
