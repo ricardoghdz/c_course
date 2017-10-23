@@ -11,3 +11,4 @@ int main(void)
     }
     printf("%i\n", n);
 }
+//Funcionamiento de la funcion strlen

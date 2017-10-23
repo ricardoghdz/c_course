@@ -4,10 +4,11 @@
 
 int main(void)
 {
+    printf("Nombre: ");
     string s = get_string();
     if (s != NULL)
     {
-        for (int i = 0; i < strlen(s); i++)
+        for (int i = 0, len = strlen(s); i < len; i++)
         {
             printf("%c\n", s[i]);
         }
