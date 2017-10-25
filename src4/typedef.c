@@ -1,7 +1,11 @@
-#include "stdlib.h"
-#include "stdio.h"
+#include<stdio.h>
+#include<stdlib.h>
 
-int main(){
-    typedef char* string; //va a ser char, pero se ve como string, lo que es un string, un apuntaddor a un char
+int main(void) {
+    typedef char* string;
+    string c = (string) malloc(10 * sizeof(char));
+    c[0] = 'R';
+    c[1] = '\0';
 
+    printf("%s\n", c);
 }

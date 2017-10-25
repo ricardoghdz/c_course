@@ -24,6 +24,6 @@ int main(void)
 
     for (int i = 0; i < STUDENTS; i++)
     {
-        printf("%s is in dorm %s and is %i years old.\n", students[i].name, students[i].dorm,students[i].age);
+        printf("%s is in dorm %s and is %i years old.\n", students[i].name, students[i].dorm,  students[i].age);
     }
 }

@@ -19,7 +19,7 @@ int main(void) {
     }
 }
 
-int binary_search(int *array, int value, int low, int high){
+int binary_search(int array[], int value, int low, int high){
     if(high < low)
         return -1;
     int mid = (low + high) / 2;

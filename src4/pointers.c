@@ -21,10 +21,10 @@ int main(void)
     int *p = &a;
     int *q = NULL;
 
-    printf("%i\n",a);
-    printf("%p\n",p);
-    printf("%i\n",*p);
-    printf("%p\n",q);
-    printf("%i\n",*q);//Al acceder a memoria que no es mia
-    printf("Hello world!");//No se ejecuta porque el programa se termina por el error anterior
+    printf("%i\n", a);
+    printf("%p\n", p);
+    printf("%i\n", *p);
+    printf("%p\n", q);
+    printf("%i\n", *q);
+    printf("Hello world!");
 }
