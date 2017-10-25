@@ -10,7 +10,7 @@ int main(void)
     printf("x is %i\n", x);
     printf("y is %i\n", y);
     printf("Swapping...\n");
-    swap(&x, &y);
+    swap(&x, &y); //Amperson significa dame la direccion de memoria de la variable
     printf("Swapped!\n");
     printf("x is %i\n", x);
     printf("y is %i\n", y);

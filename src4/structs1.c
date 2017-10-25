@@ -25,7 +25,7 @@ int main(void)
     {
         for (int i = 0; i < STUDENTS; i++)
         {
-            fprintf(file, "%s,%s\n", students[i].name, students[i].dorm);
+            fprintf(file, "%s,%s\n", students[i].name, students[i].dorm);//Saca un archivo, referencia del arcivo(file), place holders y variales
         }
         fclose(file);
     }

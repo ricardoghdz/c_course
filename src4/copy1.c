@@ -12,13 +12,13 @@ int main(void)
         return 1;
     }
 
-    char *t = malloc((strlen(s) + 1) * sizeof(char));
+    char *t = malloc((strlen(s) + 1) * sizeof(char)); //Asignar memoria con malloc, +1 por el terminador por los bits necesarios
     if (t == NULL)
     {
         return 1;
     }
 
-    for (int i = 0, n = strlen(s); i <= n; i++)
+    for (int i = 0, n = strlen(s); i <= n; i++)// Es menor o igual por el caracter de fin \0
     {
         t[i] = s[i];
     }

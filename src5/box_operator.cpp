@@ -3,7 +3,7 @@
 
 using namespace std;
 
-  //This es un puntero, por lo que se usa "->", this le indica al programa que se trabaja en ese objeto
+  //This es un puntero, por lo que se usa "->"
 
 class Caja{
     private:
@@ -21,6 +21,13 @@ class Caja{
             largo = l;
             ancho = a;
             profundo = p;
+        }
+        Caja operator+(const box& b){//Operador que suma
+            Caja box;
+            Caja.set_largo(this->largo + b.largo);//la b es por la referencia que se esta pasando
+            Caja.set_ancho(this->ancho + b.ancho);
+            Caja.set_profundo(this->profundo + b.profundo);
+            return box;
         }
         void set_largo(float largo){
             this->largo = largo;
@@ -71,6 +78,7 @@ class Caja{
 int main(){
     Caja caja1;
     Caja caja2(1.0,2.0,3.0);
+    Caja caja3 = caja1 + caja2;
 
     /*caja1.set_largo(1.2);
     caja1.set_ancho(2.2);

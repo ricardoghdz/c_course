@@ -1,4 +1,4 @@
-Implemente un programa que, dado el nombre de una persona, imprima las iniciales de la personas, como se muestra abajo.
+/*Implemente un programa que, dado el nombre de una persona, imprima las iniciales de la personas, como se muestra abajo.
 
 Tome en cuenta que la persona podria introducir palabras con iniciales en minuscular, o espacios extra entre palabras, como se muestra abajo.
 
@@ -7,4 +7,4 @@ regulus Arcturus black
 RAB
 
 $ ./iniciales_dificil
-     thomas     gordon black
+     thomas     gordon black*/

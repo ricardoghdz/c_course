@@ -13,7 +13,7 @@ int main(void)
     }
 
     string t = s;
- 
+
     if (strlen(t) > 0)
     {
         t[0] = toupper(t[0]);

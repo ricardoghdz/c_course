@@ -8,7 +8,7 @@
 
 int main(void)
 {
-    student students[STUDENTS];
+    student *students = malloc(STUDENTS * sizeof(student));
 
     for (int i = 0; i < STUDENTS; i++)
     {

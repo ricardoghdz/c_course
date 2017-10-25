@@ -4,7 +4,7 @@
 int guess_number();
 bool is_number(int guess);
 
-void bubble_sort(int array[], int length);
+void bubble_sort(int array[], int length);//El array[] pasa como puntero, dando la direccion del arreglo
 bool bubble_pass(int array[], int pass);
 void swap(int array[], int index0, int index1);
 void print_array(int array[], int length);
