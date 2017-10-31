@@ -1,0 +1,18 @@
+Base de datos lista de vuelos.
+clave, origen, destino, fecha, asientos_disponibles
+1, GDL, MEX, 25/10/17, 15
+2, GDL, MEX, 26/10/17, 15
+3, GDL, MEX, 27/10/17, 15
+4, GDL, MEX, 28/10/17, 15
+5, GDL, MEX, 29/10/17, 15
+6, GDL, MEX, 30/10/17, 15
+7, GDL, MEX, 31/10/17, 15
+GDL, MEX, 01/11/17, 15
+GDL, MTY, 25/10/17, 15
+GDL, MTY, 26/10/17, 15
+GDL, MTY, 27/10/17, 15
+GDL, MTY, 28/10/17, 15
+GDL, MTY, 29/10/17, 15
+GDL, MTY, 30/10/17, 15
+GDL, MTY, 32/10/17, 15
+GDL, MTY, 01/11/17, 15
