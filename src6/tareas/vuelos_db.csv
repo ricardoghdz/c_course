@@ -1,5 +1,3 @@
-Base de datos lista de vuelos.
-clave, origen, destino, fecha, asientos_disponibles
 1, GDL, MEX, 25/10/17, 15
 2, GDL, MEX, 26/10/17, 15
 3, GDL, MEX, 27/10/17, 15
